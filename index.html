@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转优美烟台理工校园</title>
+    <style>
+        .container {
+            perspective: 1000px;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            animation: rotate 20s linear infinite;
+        }
+
+        .carousel:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel img {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform-style: preserve-3d;
+            transition: all 0.5s;
+        }
+
+        /* 设置4个图片的3D位置 */
+        .carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+        .carousel img:nth-child(2) { transform: rotateY(90deg) translateZ(400px); }
+        .carousel img:nth-child(3) { transform: rotateY(180deg) translateZ(400px); }
+        .carousel img:nth-child(4) { transform: rotateY(270deg) translateZ(400px); }
+
+        @keyframes rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        body {
+            background: linear-gradient(to bottom, #87CEEB, #E0FFFF);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="carousel">
+            <!-- 烟台理工校园照片-->
+            <img src="微信图片_20250508102823.jpg">
+            <img src="OIP-C.jpg">
+            <img src="w700d1q75cms.jpg">
+            <img src="v2-985287f1e8436a3a003b8e8d3f553aac_720w.jpg">
+        </div>
+    </div>
+</body>
+</html>
